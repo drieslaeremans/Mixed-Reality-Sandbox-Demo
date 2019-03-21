@@ -9,29 +9,15 @@ public class RenderPeople : MonoBehaviour {
     [SerializeField]
     private GameObject nationalityButtonsCollection;
 
-    //// Children Objects
-    //[SerializeField]
-    //private GameObject collectionContainer;
-    //private GenerateCubes generateCubesRefScript;
-    //[SerializeField]
-    //private GameObject changeNationalityButton;
-
     // Use this for initialization
     void Awake()
     {
-        //if (collectionContainer != null)
-        //{
-        //    generateCubesRefScript = collectionContainer.GetComponent<GenerateCubes>();
-        //}
-
+       
     }
 
     public void NationalityHasChanged(int newNationalityID)
     {
         BroadcastMessage("ChangeToNewNationality", newNationalityID);
-
-        //generateCubesRefScript.SetPeople(DataContext.Instance.GetAllPeopleWhereNationality(newNationalityID));
-        //generateCubesRefScript.GenerateDataCubes();
     }
 
     public void GoToChangeNationality()

@@ -110,6 +110,7 @@ public class DataContext : Singleton<DataContext>
     public Person GetPerson(int id)
     {
         Person person = People.Where(p => p.ID == id).FirstOrDefault();
+        person.Nationality = Nationalities.Where(n => n.ID == person.NationalityId).FirstOrDefault();
 
         return person;
     }
@@ -136,6 +137,22 @@ public class DataContext : Singleton<DataContext>
         return people;
     }
 
+    public void CreatePerson(Person person)
+    {
+        People.Add(person);
+    }
+
+    public void UpdatePerson(Person person)
+    {
+        People.Where(p => p.ID == person.ID).ToList().ForEach(p => p = person);
+    }
+
+    public void RemovePerson(Person person)
+    {
+        int indexToRemove = People.FindIndex(p => p.ID == person.ID);
+        People.RemoveAt(indexToRemove);
+    }
+
     public Nationality GetNationality(int id)
     {
         Nationality nationality = Nationalities.Where(n => n.ID == id).FirstOrDefault();
@@ -146,5 +163,21 @@ public class DataContext : Singleton<DataContext>
     public List<Nationality> GetNationalities()
     {
         return Nationalities.OrderBy(n => n.Code).ToList();
+    }
+
+    public void CreateNationality(Nationality nationality)
+    {
+        Nationalities.Add(nationality);
+    }
+
+    public void UpdateNationality(Nationality nationality)
+    {
+        Nationalities.Where(n => n.ID == nationality.ID).ToList().ForEach(n => n = nationality);
+    }
+
+    public void RemoveNationality(Nationality nationality)
+    {
+        int indexToRemove = Nationalities.FindIndex(n => n.ID == nationality.ID);
+        Nationalities.RemoveAt(indexToRemove);
     }
 }

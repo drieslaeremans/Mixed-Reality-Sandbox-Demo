@@ -51,6 +51,7 @@ public class GenerateCubes : MonoBehaviour
                 GameObject textContent;
                 if ((textContent = newPanel.transform.Find("TextContent").gameObject) != null)
                 {
+                    newPanel.GetComponent<PersonObjectHolder>().Person = person;
                     SetObjectData(person, textContent);
                 }
             }

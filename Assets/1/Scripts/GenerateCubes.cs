@@ -34,12 +34,15 @@ public class GenerateCubes : MonoBehaviour
     public void ChangeToNewNationality(int newNationalityID = 0)
     {
         SetPeople(DataContext.Instance.GetAllPeopleWhereNationality(newNationalityID));
-        GenerateDataCubes();
+        StartCoroutine(GenerateDataCubes());
     }
 
-    public void GenerateDataCubes()
+    public IEnumerator GenerateDataCubes()
     {
         DestroyCurrentCubes();
+
+        // Wait for .15 seconds so OnClickHandler doesn't register previous click as new one on the TextPanel object.
+        yield return new WaitForSecondsRealtime(.15f);
 
         if (DataContext.IsInitialized)
         {

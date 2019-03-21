@@ -101,7 +101,7 @@ public class DataContext : Singleton<DataContext>
     public Person GetRandomPerson()
     {
         System.Random r = new System.Random();
-        Person person = People.Where(p => p.ID == r.Next(0, People.Count - 1)).FirstOrDefault();
+        Person person = People.Skip(r.Next(0, People.Count - 1)).FirstOrDefault();
         person.Nationality = Nationalities.Where(n => n.ID == person.NationalityId).FirstOrDefault();
 
         return person;

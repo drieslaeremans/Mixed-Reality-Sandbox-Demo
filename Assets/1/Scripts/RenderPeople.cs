@@ -26,4 +26,14 @@ public class RenderPeople : MonoBehaviour {
 
         nationalityButtonsCollection.SetActive(true);
     }
+
+    public void EditPersonStarted()
+    {
+
+    }
+
+    public void EditPersonFinished()
+    {
+
+    }
 }

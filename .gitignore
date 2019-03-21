@@ -40,3 +40,7 @@ sysinfo.txt
 /UWP
 *WSATestCertificate.pfx
 *WSATestCertificate.pfx.meta
+
+# Ignore SpaceNavigator
+/Assets/SpaceNavigator
+/Assets/SpaceNavigator.meta

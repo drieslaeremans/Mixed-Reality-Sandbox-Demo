@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersonObjectHolder : MonoBehaviour, IInputClickHandler {
-
-    //public GameObject EditPersonForm;
+public class PersonObjectHolder : MonoBehaviour, IInputClickHandler
+{
 
     public Person Person
     {
@@ -17,8 +16,10 @@ public class PersonObjectHolder : MonoBehaviour, IInputClickHandler {
         if (Person == null)
         {
             return;
-        } 
+        }
 
         print("Selected: " + Person.FirstName + " " + Person.LastName);
+
+        this.SendMessageUpwards("EditPersonStarted", Person, SendMessageOptions.RequireReceiver);
     }
 }

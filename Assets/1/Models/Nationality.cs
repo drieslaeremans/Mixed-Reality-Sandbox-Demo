@@ -5,6 +5,6 @@ using System.Collections.Generic;
 public class Nationality
 {
     public int ID { get; set; }
-	public string Code { get; set; } 
-	public string Country { get; set; }
+    public string Code { get; set; }
+    public string Country { get; set; }
 }

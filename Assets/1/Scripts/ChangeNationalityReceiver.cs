@@ -4,7 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeNationalityReceiver : InteractionReceiver {
+public class ChangeNationalityReceiver : InteractionReceiver
+{
 
     protected override void InputDown(GameObject obj, InputEventData eventData)
     {

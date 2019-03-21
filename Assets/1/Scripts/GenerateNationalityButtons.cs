@@ -6,13 +6,14 @@ using System.Globalization;
 using UnityEngine.Networking;
 using System.Linq;
 
-public class GenerateNationalityButtons : MonoBehaviour {
+public class GenerateNationalityButtons : MonoBehaviour
+{
 
     // Button prefab to be instantiated
     public GameObject button;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         if (DataContext.IsInitialized)
         {

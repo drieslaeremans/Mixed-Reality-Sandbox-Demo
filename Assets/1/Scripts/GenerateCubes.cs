@@ -67,7 +67,7 @@ public class GenerateCubes : MonoBehaviour
     {
         textContent.transform.Find("Lastname").gameObject.GetComponent<TextMesh>().text = person.LastName;
         textContent.transform.Find("Firstname").gameObject.GetComponent<TextMesh>().text = person.FirstName;
-        textContent.transform.Find("Date of Birth").gameObject.GetComponent<TextMesh>().text = person.DateOfBirth.ToString();
+        textContent.transform.Find("Date of Birth").gameObject.GetComponent<TextMesh>().text = person.DateOfBirth.ToString("dd/MM/yyyy");
 
         string spriteName = person.Nationality.Country.Trim().Replace(" ", "_");
         textContent.transform.Find("Flag").gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flags/" + spriteName);
@@ -96,7 +96,7 @@ public class GenerateCubes : MonoBehaviour
         print("perRow: " + itemsPerRow);
         print("rowsfloat: " + rowsFloat);
         print("RowsInt: " + Convert.ToInt32(Math.Ceiling(rowsFloat)));
-        objectCollection.Rows = Convert.ToInt32(  Math.Ceiling(rowsFloat));
+        objectCollection.Rows = Convert.ToInt32(Math.Ceiling(rowsFloat));
 
         objectCollection.UpdateCollection();
     }

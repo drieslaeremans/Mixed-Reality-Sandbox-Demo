@@ -4,12 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NationalityButtonsReceiver : InteractionReceiver {
+public class NationalityButtonsReceiver : InteractionReceiver
+{
 
     public GameObject peopleContainerObject;
 
-	// Use this for initialization
-	void Start () {}
+    // Use this for initialization
+    void Start() { }
 
     protected override void InputDown(GameObject obj, InputEventData eventData)
     {

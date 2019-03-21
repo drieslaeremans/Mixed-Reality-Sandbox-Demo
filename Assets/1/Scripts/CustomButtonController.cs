@@ -3,26 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomButtonController : MonoBehaviour {
+public class CustomButtonController : MonoBehaviour
+{
 
     public SpriteRenderer spriteRenderer;
     public SpriteButton spriteButton;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         if (spriteButton == null && spriteRenderer == null)
         {
             Debug.Log("Please link the SpriteRenderer and SpriteButton components of this GameObject to the script.");
             DestroyImmediate(gameObject);
         }
-	}
+    }
 
     // Function called by BroadcastMessage of parent-container People.
     public void ChangeToNewNationality(int newNationalityID)
     {
         Nationality nationality;
 
-        if((nationality = DataContext.Instance.GetNationality(newNationalityID)) != null)
+        if ((nationality = DataContext.Instance.GetNationality(newNationalityID)) != null)
         {
             string spriteName = nationality.Country.Trim().Replace(" ", "_");
             Sprite sprite = Resources.Load<Sprite>("Flags/" + spriteName);

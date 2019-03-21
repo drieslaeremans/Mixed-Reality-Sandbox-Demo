@@ -29,7 +29,7 @@ public class DataContext : Singleton<DataContext>
 
     private void CreateData()
     {
-        Nationalities = new List<Nationality>{ 
+        Nationalities = new List<Nationality>{
             new Nationality { ID = Interlocked.Increment(ref natID), Code = "FR", Country = "France"},
             new Nationality { ID = Interlocked.Increment(ref natID), Code = "BE", Country = "Belgium"},
             new Nationality { ID = Interlocked.Increment(ref natID), Code = "DE", Country = "Germany"},
@@ -139,6 +139,7 @@ public class DataContext : Singleton<DataContext>
 
     public void CreatePerson(Person person)
     {
+        person.ID = Interlocked.Increment(ref personID);
         People.Add(person);
     }
 
@@ -167,6 +168,7 @@ public class DataContext : Singleton<DataContext>
 
     public void CreateNationality(Nationality nationality)
     {
+        nationality.ID = Interlocked.Increment(ref natID);
         Nationalities.Add(nationality);
     }
 
